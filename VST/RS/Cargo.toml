@@ -1,0 +1,15 @@
+[package]
+name = "edgetone"
+version = "0.0.1"
+edition = "2021"
+authors = ["Akhil Sadam <sadam.akhil@gmail.com>", "Robbert van der Helm <mail@robbertvanderhelm.nl>"]
+license = "ISC"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+nih_plug = { path = "../../nih-plug/", features = ["assert_process_allocs"] }
+
+rand = "0.8.5"
+rand_pcg = "0.3.1"
