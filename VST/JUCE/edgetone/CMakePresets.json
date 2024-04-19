@@ -1,0 +1,23 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 1
+    },
+    "configurePresets": [{
+            "name": "Win",
+            "displayName": "Win",
+            "description": "Windows build using the Make generator",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/../install/"
+        },
+        {
+            "name": "Linux",
+            "displayName": "Linux",
+            "description": "Linux build using the Make generator",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/../install/"
+        }
+    ]
+}

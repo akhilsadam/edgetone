@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="XizXhi" name="edgetone" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              companyName="yozakura" companyWebsite="akhilsadam.github.io"
+              companyEmail="a130lw@gmail.com" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
+              pluginFormats="buildVST,buildVST3">
+  <MAINGROUP id="do2BzB" name="edgetone">
+    <GROUP id="{C4CA6E6D-3893-25D4-72A7-3FDEF11AFCE4}" name="Source">
+      <FILE id="BR3Iqf" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="qQaUqy" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="C0zyvm" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="yWFKWX" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES/>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="edgetone"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="edgetone"/>
+      </CONFIGURATIONS>
+    </VS2022>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
