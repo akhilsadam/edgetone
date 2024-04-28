@@ -9,15 +9,36 @@
             "name": "Win",
             "displayName": "Win",
             "description": "Windows build using the Make generator",
-            "generator": "Unix Makefiles",
-            "binaryDir": "${sourceDir}/../install/"
+            "binaryDir": "${sourceDir}/../install/",
+            "environment": {
+                "VCToolsVersion": "14.34.31933",
+                "WindowsSDKVersion": "10.0.22000.0",
+                "VCArch": "x64",
+                "VCToolsInstallDir": "$penv{ProgramFiles}/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/$env{VCToolsVersion}",
+                "WindowsSdkDir": "$penv{ProgramFiles}/Windows Kits/10",
+                "WindowsSdkIncVerDir": "$env{WindowsSdkDir}/Include/$env{WindowsSDKVersion}",
+                "WindowsSdkLibVerDir": "$env{WindowsSdkDir}/Lib/$env{WindowsSDKVersion}",
+                "INCLUDE": "$env{VCToolsInstallDir}/atlmfc/include;$env{VCToolsInstallDir}/include;$env{WindowsSdkIncVerDir}/ucrt;$env{WindowsSdkIncVerDir}/shared;$env{WindowsSdkIncVerDir}/um;$env{WindowsSdkIncVerDir}/winrt;$env{WindowsSdkIncVerDir}/cppwinrt",
+                "LIB": "$env{VCToolsInstallDir}/atlmfc/lib/$env{VCArch};$env{VCToolsInstallDir}/lib/$env{VCArch};$env{WindowsSdkLibVerDir}/ucrt/$env{VCArch};$env{WindowsSdkLibVerDir}/um/$env{VCArch}",
+                "PATH": "$env{VCToolsInstallDir}/bin/Hostx64/$env{VCArch};$env{WindowsSdkDir}/bin/$env{WindowsSDKVersion}/$env{VCArch};$penv{PATH}"
+            },
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "$env{VCToolsInstallDir}/bin/Hostx64/$env{VCArch}/cl.exe",
+                "CMAKE_CXX_COMPILER": "$env{VCToolsInstallDir}/bin/Hostx64/$env{VCArch}/cl.exe",
+                "CMAKE_C_LINK_EXECUTABLE": "$env{VCToolsInstallDir}/bin/Hostx64/$env{VCArch}/link.exe",
+                "CMAKE_CXX_LINK_EXECUTABLE": "$env{VCToolsInstallDir}/bin/Hostx64/$env{VCArch}/link.exe"
+            }
         },
         {
             "name": "Linux",
             "displayName": "Linux",
             "description": "Linux build using the Make generator",
             "generator": "Unix Makefiles",
-            "binaryDir": "${sourceDir}/../install/"
+            "binaryDir": "${sourceDir}/../install/",
+            "environment": {
+                "CC": "gcc",
+                "CXX": "g++"
+            }
         }
     ]
 }

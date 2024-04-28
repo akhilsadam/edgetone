@@ -4,6 +4,7 @@ from scipy import interpolate
 import matplotlib.pyplot as plt
 
 from tqdm import tqdm
+import jpcm
 
 
 """
@@ -445,11 +446,16 @@ def FD(inlet_profile, boundary, hx = 90, hy = 30, nt = 1000, dt=0.1, nu = 0.0001
 
 
 def anim(x):
-    fig, ax = plt.subplots(figsize=(5,5))
+    fig, ax = plt.subplots(figsize=(15,5))
+    cmap = jpcm.get("sky")
     def make_frame(f):
         ax.clear()
-        im = ax.imshow(f.T, cmap="coolwarm")
+        im = ax.imshow(f.T, cmap=cmap)
         plt.tight_layout()
+        plt.gca().set_axis_off()
+        plt.subplots_adjust(top = 1, bottom = 0, right = 1, left = 0, 
+                    hspace = 0, wspace = 0)
+        plt.margins(0,0)
         return mplfig_to_npimage(fig)
     animation = ImageSequenceClip(list(make_frame(f) for f in x), fps=20)
     plt.close()
@@ -457,9 +463,11 @@ def anim(x):
 
 if __name__== "__main__":
     
-    pv = FD(jet(),edge())
-    np.save(export, pv)
+    # pv = FD(jet(),edge())
+    # np.save(export, pv)
+    
+    pv = np.load(export)
     
     from moviepy.editor import ImageSequenceClip
     from moviepy.video.io.bindings import mplfig_to_npimage
-    anim(pv[...,0]).write_videofile("pressure.mp4") # np.save(export,p) # np.load(export)
+    anim(pv[...,1]).write_videofile("vx.mp4") # np.save(export,p) # np.load(export)

@@ -2,9 +2,9 @@
 
 <JUCERPROJECT id="XizXhi" name="edgetone" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              companyName="yozakura" companyWebsite="akhilsadam.github.io"
+              companyName="sakura-yu" companyWebsite="akhilsadam.github.io"
               companyEmail="a130lw@gmail.com" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
-              pluginFormats="buildVST,buildVST3">
+              pluginFormats="buildStandalone,buildVST,buildVST3">
   <MAINGROUP id="do2BzB" name="edgetone">
     <GROUP id="{C4CA6E6D-3893-25D4-72A7-3FDEF11AFCE4}" name="Source">
       <FILE id="BR3Iqf" name="PluginProcessor.cpp" compile="1" resource="0"
